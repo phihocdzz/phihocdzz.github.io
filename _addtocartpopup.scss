@@ -1,0 +1,101 @@
+.popup-addtocart{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    background-color: white;
+    z-index: 9999999;
+    padding: 32px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .25s linear;
+    &-times{
+        position: absolute;
+        right: -18px;
+        top: -18px;
+        background-color: white;
+        border-radius: 50%;
+        cursor: pointer;
+        i {
+            font-size: 4rem;
+        }
+    }
+    &-heading{
+        display: flex;
+        justify-content: space-between;
+        p,span {
+            font-size: 1.6rem;
+            color: $grey-color;
+        }
+        p {
+            width: 30%;
+            line-height: 1.5;
+            font-weight: bold;
+        }
+    }
+    &-content{
+        display: flex;
+        justify-content: space-between;
+        &-info{
+            display: flex;
+            width: 30%;
+            margin-top: 16px;
+            img {
+                width: 30%;
+            }
+            &-text{
+                margin-left: 16px;
+                span {
+                    font-size: 1.6rem;
+                    color: $grey-color;
+                }
+                p{
+                    font-family: 'Rancho', sans-serif;
+                    font-weight: 500;
+                    color: $brown-color;
+                    font-size: 2rem;
+                }
+            }
+        }
+        &-price{
+            span {
+                font-size: 3rem;
+                color: $grey-color;
+            }
+        }
+    }
+    &-buttons{
+        text-align: right;
+        a {
+            margin-left: auto;
+            padding: 12px 24px;
+            text-align: center;
+            background-color: $brown-color;
+            border-radius: 30px;
+            font-size: 1.6rem;
+            font-weight: bold;
+            transition: all .25s linear;
+            &:hover{
+                background-color: $primary-color;
+                color: black;
+                i {
+                    color: black;
+                }
+            }
+        }
+        a + a {
+            margin-left: 16px;
+        }
+        i {
+            font-size: 1.6rem;
+            color: white;
+            margin-right: 4px;
+            transition:  all .25s linear;
+        }
+    }
+}
+.popup-addtocart.active{
+    opacity: 1;
+    visibility: visible;
+}

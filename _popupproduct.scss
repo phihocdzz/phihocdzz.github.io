@@ -1,0 +1,181 @@
+.popup-product-container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 80%;
+    height: 600px;
+    overflow-y: scroll;
+    z-index: 9999999;
+    transition: all .25s linear;
+    opacity: 0;
+    visibility: hidden;
+    .popup-product-times{
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        padding: 4px 8px;
+        cursor: pointer;
+        i {
+            font-size: 3rem;
+        }
+
+    }
+    .popup-product{
+        display: flex;
+        padding: 64px;
+        .popup-product-image{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            > img {
+                width: 100%;
+                transition: all .25s linear;
+                opacity: 0.6;
+                &:hover{
+                    opacity: 1;
+                }
+            }
+            .popup-product-subimage{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin-top: 16px;
+                img {
+                    width: 25%;
+                    cursor: pointer;
+                }
+                img + img {
+                    margin-left: 24px;
+                }
+                img.active{
+                    border: 1px solid black;
+                }
+            }
+        }
+    }
+    .popup-product-content{
+        margin-left: 32px;
+        width: 50%;
+        &-title{
+            margin-bottom: 16px;
+            h4 {
+                font-size: 4rem;
+                font-weight: 500;
+                font-family: 'Rancho', sans-serif;
+                color: $brown-color;
+            }
+            p {
+                font-size: 1.6rem;
+                margin-top: 16px;
+                color: $grey-color;
+            }
+        }
+        &-desc{
+            > div {
+                display: flex;
+                margin-top: 16px;
+                p {
+                    font-size: 1.6rem;
+                    width: 30%;
+                }
+                span,.weight-item,.ingredient-item,.quantity-item {
+                    width: 70%;
+                    font-size: 1.6rem;
+                    margin-left: 48px;
+                }
+                .weight-item,.ingredient-item,.quantity-item{
+                    span{
+                        margin-left: 0;
+                        cursor: pointer;
+                    }
+                    span.active{
+                        border: 2px solid black;
+                    }
+                    p {
+                        width: 60%;
+                        text-align: center;
+                        border: 1px solid rgba($color: #000000, $alpha: 0.1);
+                        font-weight: bold;
+                        cursor: pointer;
+                    }
+                    p.active{
+                        border: 2px solid black;
+                    }
+                    p + p{
+                        margin-top: 8px;
+                    }
+
+                }
+                .available{
+                    color: rgb(139, 233, 143);
+                    font-weight: bold;
+                }
+                .unavailable {
+                    color: rgb(252, 172, 228);
+                    font-weight: bold;
+                }
+                .weight-item{
+                    span {
+                        width: 60%;
+                        padding: 6px;
+                        text-align: center;
+                        border: 1px solid rgba($color: #000000, $alpha: 0.1);
+                        font-weight: bold;
+                    }
+                    span + span {
+                        margin-left: 8px;
+                    }
+                }
+                .quantity-item{
+                    button {
+                        width: 40px;
+                        height: 40px;
+                        border: 1px solid rgba($color: #000000, $alpha: 0.1);
+                        background-color: transparent;
+                        cursor: pointer;
+                        font-size: 1.6rem;
+
+                    }
+                    input {
+                        width: 40px;
+                        height: 40px;
+                        padding: 8px 0;
+                        text-align: center;
+                        border: 1px solid rgba($color: #000000, $alpha: 0.1);
+                        outline: none;
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+            .subtotal{
+                span {
+                    font-family: 'Rancho', sans-serif;
+                    font-weight: 500;
+                    font-size: 3rem;
+                    color: $brown-color;
+                }
+            }
+            .add {
+                a {
+                    font-size: 1.6rem;
+                    background-color: $brown-color;
+                    border-radius: 30px;
+                    padding: 8px 24px;
+                    transition: all .25s linear;
+                    font-weight: 600;
+                    &:hover{
+                        background-color: $primary-color;
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}
+.popup-product-container.active{
+    opacity: 1;
+    visibility: visible;
+}

@@ -1,0 +1,114 @@
+.navbar-mobile {
+    display: none;
+
+}
+.sidebar{
+    display: none;
+}
+.navbar {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 999999;
+    &-menu{
+        > ul {
+            display: flex;
+            .navbar-menu-list > a {
+                font-size: 2rem;
+            }
+            .navbar-menu-list{
+                padding: 54px 0;
+                cursor: pointer;
+            }
+            .navbar-menu-list + .navbar-menu-list  {
+                margin-left: 32px;
+            }
+            .navbar-menu-list.active > a {
+                color: orange;
+            }
+            li:nth-of-type(2):hover .mega-menu{
+                display: flex;
+            }
+        }
+        .mega-menu {
+            position: absolute;
+            width: 100%;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            display: none;
+            &-list-drink {
+                width: 60%;
+                display: flex;
+                flex-wrap: wrap;
+                padding: 16px 16px 32px;
+            }
+            &-list-drink-item {
+                width: 33.3333%;
+                > a {
+                    font-size: 1.6rem;
+                    color: #523021;
+                    font-weight: bold;
+                }
+                li a {
+                    font-size: 1.4rem;
+                    color: $grey-color;
+                    margin: 8px 0;
+                    transition: all .25s linear;
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+            }
+            &-list-drink-item:nth-of-type(4),
+            &-list-drink-item:nth-of-type(5),
+            &-list-drink-item:nth-of-type(6){
+                margin-top: 16px;
+            }
+            &-image{
+                width: 40%;
+                padding: 16px 16px 32px;
+                position: relative;
+                .mega-menu-image-list {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-gap: 16px;
+                    .image-item-1{
+                        grid-row: 1/2;
+                        grid-column: 1/2;
+                    }
+                    .image-item-2 {
+                        grid-row: 2/3;
+                        grid-column: 1/2;
+                    }
+                    .image-item-3 {
+                        grid-row: 1/3;
+                        grid-column: 2/3;
+                    }
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+    &-cart{
+        display: flex;
+        align-items: center;
+        font-size: 3rem;
+        cursor: pointer;
+        i {
+            color: white;
+        }
+        p {
+            margin-left: 12px;
+            color: rgb(255, 255, 255);
+        }
+    }
+}
